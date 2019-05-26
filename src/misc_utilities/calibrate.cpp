@@ -23,6 +23,7 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/calib3d/calib3d.hpp>
+#include "opencv2/imgproc/imgproc.hpp"
 
 #include "support/filesystem.h"
 #include "../tclap/CmdLine.h"
@@ -230,7 +231,7 @@ void initialize_variables()
 
 void create_window()
 {
-  namedWindow(WINDOW_NAME, CV_WINDOW_AUTOSIZE | CV_WINDOW_KEEPRATIO | CV_GUI_EXPANDED);
+  namedWindow(WINDOW_NAME, WINDOW_AUTOSIZE | WINDOW_KEEPRATIO | WINDOW_GUI_EXPANDED);
   
   value = round(-(rotationx * 20000.0) + 100);
   createTrackbar( "X", WINDOW_NAME, &value, 200,  XChange);
@@ -401,6 +402,7 @@ int main(int argc, char** argv) {
   
   drawImage(imgOriginal);
 
+/*
   while (cvGetWindowHandle(WINDOW_NAME.c_str()) != 0)
   {
 
@@ -418,7 +420,7 @@ int main(int argc, char** argv) {
   }
 
   cvDestroyAllWindows();
-  
+ */ 
   
   return 0;
 }

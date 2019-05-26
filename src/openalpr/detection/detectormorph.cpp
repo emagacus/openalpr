@@ -18,6 +18,7 @@
  */
 
 #include "detectormorph.h"
+#include "opencv2/core/types_c.h"
 
 using namespace cv;
 using namespace std;
